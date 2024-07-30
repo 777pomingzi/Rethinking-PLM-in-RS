@@ -293,7 +293,7 @@ if __name__ == '__main__':
         test_metric = evaluate(model, test_dataloader,'Test', args,accum_iter,logger_service)
     if args.init_type is not None:
         embedding_dir = Path('../embedding')
-        tuned_embedding_path = embedding_dir / args.dataset / args.init_type / 'item_embeddings'
+        tuned_embedding_path = embedding_dir / args.dataset / args.init_type / ('item_embeddings_'+args.dataset)
         embeddings = torch.load(tuned_embedding_path)
         model.init_item_embedding(embeddings)
 
@@ -336,7 +336,7 @@ if __name__ == '__main__':
             eval_metric = evaluate(model, adam_optimizer, val_dataloader,'Eval', args, accum_iter, logger_service)
             if eval_metric['NDCG@10'] > best_target:
                 best_target = eval_metric['NDCG@10']
-                patient = 10
+                patient = 20
             else:
                 patient -= 1
                 if patient == 0:
@@ -351,8 +351,3 @@ if __name__ == '__main__':
     test_metric = evaluate(model,adam_optimizer ,test_dataloader,'Test', args,accum_iter,logger_service)
 
     print("Done")
-
-
-
-
-
