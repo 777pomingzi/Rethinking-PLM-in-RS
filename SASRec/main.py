@@ -281,7 +281,6 @@ if __name__ == '__main__':
         loss_fct = torch.nn.BCEWithLogitsLoss()
     else:
         loss_fct = torch.nn.CrossEntropyLoss(ignore_index=-1) # torch.nn.BCELoss()
-    adam_optimizer = torch.optim.Adam(model.parameters(), lr=args.lr, betas=(0.9, 0.98))
     
     T = 0.0
     t0 = time.time()
@@ -297,6 +296,8 @@ if __name__ == '__main__':
         tuned_embedding_path = embedding_dir / args.dataset / args.init_type / 'item_embeddings'
         embeddings = torch.load(tuned_embedding_path)
         model.init_item_embedding(embeddings)
+
+    adam_optimizer = torch.optim.Adam(model.parameters(), lr=args.lr, betas=(0.9, 0.98))
     
     for epoch in range(epoch_start_idx, args.num_epochs + 1):
         print("epoch: ", epoch, " ", end=None)
