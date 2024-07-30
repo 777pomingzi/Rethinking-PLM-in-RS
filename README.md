@@ -6,10 +6,10 @@ This repository contains the code of our RecSys 2024 paper **"[The Elephant in t
 
 - [Overview](#overview)
 - [Dependencies](#dependencies)
-- [Download Datasets and Pre-trained Model](#Download Datasets and Pre-trained Model)
-- [Model and Data Preparation](#Model and Data Preparation)
+- [Download Datasets and Pre-trained Model](#download Datasets and Pre-trained Model)
+- [Model and Data Preparation](#model and Data Preparation)
 - [Training](#Training)
-- [Pre-training from scratch](#Pre-training from scratch)
+- [Pre-training from scratch](#pre-training from scratch)
 - [Acknowledgment](#Acknowledgment)
 
 ## Overview
