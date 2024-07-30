@@ -336,7 +336,7 @@ if __name__ == '__main__':
             eval_metric = evaluate(model, adam_optimizer, val_dataloader,'Eval', args, accum_iter, logger_service)
             if eval_metric['NDCG@10'] > best_target:
                 best_target = eval_metric['NDCG@10']
-                patient = 20
+                patient = 10
             else:
                 patient -= 1
                 if patient == 0:
