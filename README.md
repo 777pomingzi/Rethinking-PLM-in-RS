@@ -28,22 +28,22 @@ We train and test the model using the following main dependencies:
 
 ## Download Datasets and Pre-trained Model
 
-Please download the processed downstream (or pre-training, if needed) datasets and the pre-trained model from [Google Drive](https://drive.google.com/drive/folders/1Uik0fMk4oquV_bS9lXTZuExAYbIDkEMW?usp=sharing)
+Please download the processed downstream (or pre-training, if needed) datasets and the pre-trained model from Google Drive as follow:
 
 | Model                  |
 | :--------------------- |
-| [Longformer_ckpt]()    |
-| [RecformerForSeqRec]() |
+| [Longformer_ckpt](https://drive.google.com/file/d/1NcCXRYQkSkVfDGaaIK3x_vQ6cAxjZQP0/view?usp=drive_link)    |
+| [RecformerForSeqRec](https://drive.google.com/file/d/1zKABB_0_QNs3eaHQ6BPqwg_fWa6S_YXg/view?usp=drive_link) |
 
 | Data                        |
 | --------------------------- |
-| [ID-based SR model data]()  |
-| [RECFORMER_finetune_data]() |
-| [RECFORMER_pretrain_data]() |
+| [ID-based SR model data](https://drive.google.com/file/d/1NRoANHJsyKFthcIjkLH317WN-M7_WR6F/view?usp=drive_link)  |
+| [RECFORMER_finetune_data](https://drive.google.com/file/d/1jWCrgBGeWXN7MFKNfR1WZWOxkU31Eq4H/view?usp=drive_link) |
+| [RECFORMER_pretrain_data](https://drive.google.com/file/d/1sX04nmryDtHaNCv_Qob2pPGObttELyyV/view?usp=drive_link) |
 
 | Embedding                     |
 | ----------------------------- |
-| [PLM-initialized-embedding]() |
+| [PLM-initialized-embedding](https://drive.google.com/file/d/1NLTzfd148lX04_or2uLiC5VF57LEuh7V/view?usp=drive_link) |
 
 ## Model and Data Preparation
 
