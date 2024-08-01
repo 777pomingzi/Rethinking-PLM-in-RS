@@ -6,8 +6,8 @@ This repository contains the code of our RecSys 2024 paper **"[The Elephant in t
 
 - [Overview](#overview)
 - [Dependencies](#dependencies)
-- [Download Datasets and Pre-trained Model](#download-Datasets-and-Pre-trained-Model)
-- [Model and Data Preparation](#model-and-Data-Preparation)
+- [Download Files](#Download-Files)
+- [Files Preparation](#Files-Preparation)
 - [Training](#Training)
 - [Pre-training from scratch](#pre-training-from-scratch)
 - [Acknowledgment](#Acknowledgment)
@@ -26,9 +26,9 @@ We train and test the model using the following main dependencies:
 - Transformers 4.35.2
 - Deepspeed  0.12.4  
 
-## Download Datasets and Pre-trained Model
+## Download Files
 
-Please download the processed downstream (or pre-training, if needed) datasets and the pre-trained model from Google Drive as follow:
+Please download the processed downstream (or pre-training, if needed) datasets, the pre-trained model, and embedding from Google Drive according to your needs:
 
 | Model                  |
 | :--------------------- |
@@ -43,11 +43,15 @@ Please download the processed downstream (or pre-training, if needed) datasets a
 
 | Embedding                     |
 | ----------------------------- |
-| [PLM-initialized-embedding](https://drive.google.com/file/d/1NLTzfd148lX04_or2uLiC5VF57LEuh7V/view?usp=drive_link) |
+| [PLM-initialized embedding](https://drive.google.com/file/d/1NLTzfd148lX04_or2uLiC5VF57LEuh7V/view?usp=drive_link) |
 
-## Model and Data Preparation
+If you want to replicate the pre-training and fine-tuning procedures of RECFORMER and use it to generate embeddings for initialization, you may consider downloading the Longformer_ckpt, RecformerForSeqRec, RECFORMER_pretrain_data, and RECFORMER_finetune_data.
 
-After downloading the models and data, you could organize them as follows:
+If you want to directly replicate our results in SASRec and BERT4Rec using initialized embeddings, you may choose to download the ID-based SR model data and PLM-initialized embedding.
+
+## Files Preparation
+
+After downloading the files according to your needs, you could organize them as follows:
 
 ```
 ├── Bert4Rec
@@ -65,7 +69,7 @@ After downloading the models and data, you could organize them as follows:
 
 ## Training
 
-Firstly, we train  `RecformerForSeqRec` with two-stage finetuning like its original paper and let it to generate the item embeddings for initializing the ID-based SR models. A script is provided for finetuning in the Recformer folder:
+Firstly, we train  `RecformerForSeqRec` with two-stage finetuning like its original paper and let it generate the item embeddings for initializing the ID-based SR models. A script is provided for finetuning in the Recformer folder:
 
 ```bash
 cd Recformer
@@ -86,7 +90,7 @@ cd Bert4Rec
 bash finetune.sh
 ```
 
-You need to set the type of initialized item embeddings `--init_type`, evaluation setting `--sample_size` (adopting random sampling setting if sample_size is set to be greater than 0, adopting full-ranking setting if sample_size is set to be lower than 0). And for BERT4Rec, you could change its training setting in templates.py
+You need to set the type of initialized item embeddings `--init_type` (adopting randomly initialized embedding if set to None), evaluation setting `--sample_size` (adopting random sampling setting if sample_size is set to be greater than 0, adopting full-ranking setting if sample_size is set to be lower than 0). And for BERT4Rec, you could change its training setting in templates.py
 
 ## Pre-training from scratch
 
