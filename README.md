@@ -69,6 +69,8 @@ After downloading the files according to your needs, you could organize them as 
 
 ## Training
 
+### Generating Initialized Embedding
+
 Firstly, we train  `RecformerForSeqRec` with two-stage finetuning like its original paper and let it generate the item embeddings for initializing the ID-based SR models. A script is provided for finetuning in the Recformer folder:
 
 ```bash
@@ -76,7 +78,9 @@ cd Recformer
 bash finetune.sh
 ```
 
-You need to set the processed data path `--data_path`, evaluation setting `--sample_size` (adopting random sampling setting if sample_size is set to be greater than 0, adopting full-ranking setting if sample_size is set to be lower than 0).
+You need to set the processed data path `--data_path`, evaluation setting `--sample_size` (adopting random sampling setting if sample_size is set to be greater than 0, adopting full-ranking setting if sample_size is set to be lower than 0). You could skip this step if you have already downloaded the initialized embedding.
+
+### Training ID-based Model with Initialized Embedding
 
 Then, we could train the enhanced SASRec or BERT4Rec with initialized item embeddings, scripts are provided in their corresponding folders:
 
