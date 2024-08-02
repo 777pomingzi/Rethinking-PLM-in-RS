@@ -32,18 +32,18 @@ Please download the processed downstream (or pre-training, if needed) datasets, 
 
 | Model                  |
 | :--------------------- |
-| [Longformer_ckpt](https://drive.google.com/file/d/1NcCXRYQkSkVfDGaaIK3x_vQ6cAxjZQP0/view?usp=drive_link)    |
-| [RecformerForSeqRec](https://drive.google.com/file/d/1zKABB_0_QNs3eaHQ6BPqwg_fWa6S_YXg/view?usp=drive_link) |
+| [Longformer_ckpt](https://drive.google.com/file/d/15Lk2dNupUNFIG4y3Bgv95FEKQTBPQcmx/view?usp=sharing)    |
+| [RecformerForSeqRec](https://drive.google.com/file/d/1NtYA5AYgrvJYUgh-EFS-mF0U9aAfWL9m/view?usp=sharing) |
 
 | Data                        |
 | --------------------------- |
-| [ID-based SR model data](https://drive.google.com/file/d/1NRoANHJsyKFthcIjkLH317WN-M7_WR6F/view?usp=drive_link)  |
-| [RECFORMER_finetune_data](https://drive.google.com/file/d/1jWCrgBGeWXN7MFKNfR1WZWOxkU31Eq4H/view?usp=drive_link) |
-| [RECFORMER_pretrain_data](https://drive.google.com/file/d/1sX04nmryDtHaNCv_Qob2pPGObttELyyV/view?usp=drive_link) |
+| [ID-based SR model data](https://drive.google.com/file/d/1NmLcsjxZkmCrB6j5pPYXGy7zUd5XMe0H/view?usp=sharing)  |
+| [RECFORMER_finetune_data](https://drive.google.com/file/d/1QUB5l2ScBwTZ3t3TVLLNKWW4oesvcvd3/view?usp=sharing) |
+| [RECFORMER_pretrain_data](https://drive.google.com/file/d/1zqr0K4N_vWxlEXLL91nb_ATBrU-eRe1_/view?usp=sharing) |
 
 | Embedding                     |
 | ----------------------------- |
-| [PLM-initialized embedding](https://drive.google.com/file/d/1NLTzfd148lX04_or2uLiC5VF57LEuh7V/view?usp=drive_link) |
+| [PLM-initialized embedding](https://drive.google.com/file/d/1NLDBjJKyLgtW1X4cRVTlzzdbG0pabL2U/view?usp=sharing) |
 
 If you want to replicate the pre-training and fine-tuning procedures of RECFORMER and use it to generate embeddings for initialization, you may consider downloading the Longformer_ckpt, RecformerForSeqRec, RECFORMER_pretrain_data, and RECFORMER_finetune_data.
 
