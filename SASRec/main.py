@@ -291,7 +291,7 @@ if __name__ == '__main__':
     if args.inference_only:
         model.eval()
         test_metric = evaluate(model, test_dataloader,'Test', args,accum_iter,logger_service)
-    if args.init_type is not None:
+    if args.init_type != 'none':
         embedding_dir = Path('../embedding')
         tuned_embedding_path = embedding_dir / args.dataset / args.init_type / ('item_embeddings_'+args.dataset)
         embeddings = torch.load(tuned_embedding_path)
