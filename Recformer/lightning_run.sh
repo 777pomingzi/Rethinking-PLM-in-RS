@@ -1,5 +1,4 @@
 # Use distributed data parallel
-# 预训练的，微调用 lit_run.sh
 # CUDA_VISIBLE_DEVICES=4,5,6,7 python lightning_pretrain.py \
 CUDA_VISIBLE_DEVICES=4,5,6,7 torchrun --nproc_per_node=4 --master_port='29501' lightning_pretrain.py \
     --model_name_or_path longformer-base-4096 \
