@@ -18,7 +18,7 @@ class AbstractTrainer(metaclass=ABCMeta):
         self.device = args.device
         if args.init_type is not None:
             embedding_dir = Path('../embedding')
-            tuned_embedding_path = embedding_dir / self.args.dataset_code / self.args.init_type / 'item_embeddings'
+            tuned_embedding_path = embedding_dir / self.args.dataset_code / self.args.init_type / ('item_embeddings_' + self.args.dataset_code)
             embeddings = torch.load(tuned_embedding_path)
             model.init_item_embedding(embeddings)
 
