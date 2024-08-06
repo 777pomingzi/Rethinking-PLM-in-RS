@@ -83,7 +83,7 @@ class AbstractTrainer(metaclass=ABCMeta):
                 patient -= 1
                 if patient == 0:
                     break
-        self.model.load_state_dict(torch.load(model_save_path, map_location=torch.device(self.args.device))['model_state_dict'])
+        self.model.module.load_state_dict(torch.load(model_save_path, map_location=torch.device(self.args.device))['model_state_dict'])
         self.test(accum_iter)
         self.writer.close()
 
