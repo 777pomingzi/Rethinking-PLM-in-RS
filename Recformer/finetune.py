@@ -313,7 +313,7 @@ def main():
     os.makedirs(dir_domain,exist_ok=True)
 
     longformer_dir = dir_domain / 'longformer'
-    longformer_emb_path =  longformer_dir / 'item_embeddings'
+    longformer_emb_path =  longformer_dir / ('item_embeddings_' + domain)
     if not longformer_emb_path.exists():
         longformer_dir.mkdir(exist_ok=True)
         longformer_ckpt = torch.load(args.longformer_ckpt)
@@ -346,7 +346,7 @@ def main():
     model.init_item_embedding(item_embeddings)
 
     pretrain_dir = dir_domain / 'pretrain'
-    pretrain_emb_path =  pretrain_dir / 'item_embeddings'
+    pretrain_emb_path =  pretrain_dir / ('item_embeddings_' + domain)
     if not pretrain_emb_path.exists():
         pretrain_dir.mkdir(exist_ok=True)
         convert_save_embddings(item_embeddings,pretrain_emb_path)
@@ -402,7 +402,7 @@ def main():
     model.load_state_dict(torch.load(path_ckpt))
    
     finetune_dir = dir_domain / 'finetune'
-    finetune_emb_path = finetune_dir / 'item_embeddings'
+    finetune_emb_path = finetune_dir / ('item_embeddings_' + domain)
     if not finetune_emb_path.exists():
         finetune_dir.mkdir(exist_ok=True)
         convert_save_embddings(model.item_embedding.weight,finetune_emb_path)
