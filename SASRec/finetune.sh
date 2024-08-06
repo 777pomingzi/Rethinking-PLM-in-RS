@@ -4,5 +4,5 @@ python main.py \
   --batch_size=128 \
   --device_id=5 \
   --sample_size 100 \
-  --init_type pretrain #finetune  longformer  pretrain
+  --init_type pretrain #finetune  longformer  pretrain none
 
