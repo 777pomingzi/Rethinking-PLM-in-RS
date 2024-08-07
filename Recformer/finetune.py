@@ -327,6 +327,8 @@ def main():
     pretrain_ckpt = torch.load(args.pretrain_ckpt)
     model.load_state_dict(pretrain_ckpt, strict=False)
 
+    model.to(args.device) # send item embeddings to device
+
     if args.fix_word_embedding:
         print('Fix word embeddings.')
         for param in model.longformer.embeddings.word_embeddings.parameters():
@@ -351,8 +353,6 @@ def main():
         pretrain_dir.mkdir(exist_ok=True)
         convert_save_embddings(item_embeddings,pretrain_emb_path)
         
-
-    model.to(args.device) # send item embeddings to device
 
     num_train_optimization_steps = int(len(train_loader) / args.gradient_accumulation_steps) * args.num_train_epochs
     optimizer, scheduler = create_optimizer_and_scheduler(model, num_train_optimization_steps, args)
